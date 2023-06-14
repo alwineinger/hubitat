@@ -16,7 +16,7 @@ metadata {
   definition (name: "Honeywell Zone Contact", namespace: "brianwilson-hubitat", author: "bubba@bubba.org") {
     capability "Contact Sensor"
         command "open"
-		    command "close"
+	command "close"
     
     capability "Sensor"
 
