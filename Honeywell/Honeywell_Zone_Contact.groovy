@@ -15,6 +15,9 @@
 metadata {
   definition (name: "Honeywell Zone Contact", namespace: "brianwilson-hubitat", author: "bubba@bubba.org") {
     capability "Contact Sensor"
+        command "open"
+		    command "close"
+    
     capability "Sensor"
 
     command "zone"
@@ -34,4 +37,12 @@ def zone(String state) {
   def desc = descMap."${state}"
 
   sendEvent (name: "contact", value: "${state}", descriptionText: "${desc}")
+}
+
+def open(){
+	sendEvent(name: "contact", value: "open")
+}
+
+def close(){
+	sendEvent(name: "contact", value: "closed")
 }
